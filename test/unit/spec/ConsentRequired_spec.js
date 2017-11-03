@@ -72,6 +72,11 @@ function (Q, _, $, OktaAuth, LoginUtil, SharedUtil, Util, ConsentRequiredForm, E
           expect(test.form.userLogo()).toHaveClass('person-16-gray');
         });
       });
+      itp('has the correct user logo but a second test', function () {
+        return setup().then(function (test) {
+          expect(test.form.userLogo()).toHaveClass('person-16-gray');
+        });
+      });
       itp('has the default logo if client logo is not provided', function () {
         return setup().then(function (test) {
           expect(test.form.clientLogo()).toHaveAttr('src', 'https://example.okta.com/img/logos/default.png');
